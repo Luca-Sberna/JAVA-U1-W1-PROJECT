@@ -42,10 +42,11 @@ public class Main {
                     break;
             }
         }
-        scanner.nextLine();
+      
 
         int choice = -1;
         while (choice != 0) {
+        	System.out.println("");
             System.out.println("Seleziona un elemento da riprodurre (1 - " + elements.length + ", 0 per uscire):");
             choice = scanner.nextInt();
            
