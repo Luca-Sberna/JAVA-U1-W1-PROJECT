@@ -51,7 +51,7 @@ public class Main {
            
             if (choice >= 1 && choice <= elements.length) {
                 MediaElement element = elements[choice - 1];
-                System.out.println("Elemento selezionato: " + choice);
+                System.out.println("Elemento selezionato = " +"numero:" + choice + " " + "nome:" + elements[choice].getTitle() );
                 
                 
                 if (element instanceof Audio) {
