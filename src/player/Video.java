@@ -12,11 +12,12 @@ protected int volume;
     }
     
     public void play() {
+    	System.out.println("Riproducendo video: ");
         for (int i = 0; i < duration; i++) {
-        	System.out.print(getTitle());
+        	System.out.print(getTitle()+" ");
             for (int j = 0; j < volume; j++) {
-                System.out.print("!");
-            }
+                System.out.print("!"+" ");
+            }           
             for (int k = 0; k < luminosity; k++) {
             	System.out.print("*");
             }

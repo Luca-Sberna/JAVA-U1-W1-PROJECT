@@ -1,7 +1,7 @@
 package player;
 
 public abstract class MediaElement {
-    private static String title;
+    private String title;
     
   
     

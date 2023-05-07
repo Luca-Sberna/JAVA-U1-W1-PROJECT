@@ -11,7 +11,11 @@ public class Image extends MediaElement {
 	
 	
 	public void show() {
-        
+System.out.println("Mostro immagine: "); 
+
+String luminosityStr = "*".repeat(luminosity);
+System.out.println(getTitle() + " " + luminosityStr);
+System.out.println();
     }
 	
 	 public void aumentaLuminosita(int al) {

@@ -10,6 +10,7 @@ public class Audio extends MediaElement implements Playable {
 	}
 	
 	public void play() {
+		System.out.println("Riproducendo audio: ");
 		 for (int i = 0; i < duration; i++) {
 			 String puntoEsclamativo = "!".repeat(volume);
 			 
@@ -21,6 +22,7 @@ public class Audio extends MediaElement implements Playable {
 //	            		System.out.println("!");
 //	            	}
 	            }
+System.out.println();
 	        }
 		
 	
