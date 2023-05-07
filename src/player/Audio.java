@@ -9,14 +9,17 @@ public class Audio extends MediaElement implements Playable {
         this.duration = duration;
 	}
 	@Override
-	public void play() {
-		 for (int i = 0; i < duration; i++) {
-			 System.out.println(title);
-	            for (int j = 0; j < volume; j++) {
-	                System.out.print("!");
-	            }
-	        }
+	 public void play() {
+		System.out.println(title);
+        for (int i = 0; i < getDuration(); i++) {
+            System.out.println(getTitle()  + "!".repeat(volume));
+        }
+    }
 		
+	
+	private int getVolume() {
+		// TODO Auto-generated method stub
+		return volume;
 	}
 	@Override
 	public int getDuration() {
@@ -39,7 +42,7 @@ public class Audio extends MediaElement implements Playable {
 		// TODO Auto-generated method stub
 		
 	}
-	public void setDuration(int duration2) {
+	public void setDuration(int duration) {
 		// TODO Auto-generated method stub
 		
 	}
