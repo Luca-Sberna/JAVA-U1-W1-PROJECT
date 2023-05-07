@@ -11,14 +11,14 @@ public class Image extends MediaElement {
 	
 	
 	public void show() {
-		System.out.println(getTitle());
-        for (int j = 0; j < luminosity; j++) {
-            System.out.print("*");
-        }
+        
     }
 	
-	 public void aumentaLuminosita() {
-	        luminosity++;
+	 public void aumentaLuminosita(int al) {
+	    	for (int i = 0; i < al; i++) {             
+	           
+	            luminosity++;
+	        }
 	    }
 	 
 	 public void diminuisciLuminosita() {

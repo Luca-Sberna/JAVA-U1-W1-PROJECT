@@ -51,8 +51,9 @@ public class Main {
            
             
             if (choice >= 1 && choice <= elements.length) {
-                MediaElement element = elements[choice];
+                MediaElement element = elements[choice - 1];
                 System.out.println("Elemento selezionato: " + element.getTitle());
+                
                 if (element instanceof Audio) {
                     MediaElement playableElement = (Audio) element;
                     System.out.println("Regola il volume (valori da 0 a 10, -1 per uscire):");
@@ -71,22 +72,25 @@ public class Main {
                     }
                 } else if (element instanceof Image) {
                     Image imageElement = (Image) element;
-                    System.out.println("Regola la luminosità (valori da 0 a 10, -1 per uscire):");
                     int luminosity = -1;
                     while (luminosity < 0 || luminosity > 10) {
+                        System.out.println("Regola la luminosità (valori da 0 a 10, -1 per uscire):");
                         luminosity = scanner.nextInt();
                         scanner.nextLine();
                         if (luminosity >= 0 && luminosity <= 10) {
-                            imageElement.aumentaLuminosita();
+                            imageElement.aumentaLuminosita(luminosity);
+                            String luminosityStr = "";
                             for (int i = 0; i < luminosity; i++) {
-                                System.out.print("*");
+                                luminosityStr += "*";
                             }
-                            System.out.println();
+                            System.out.println(imageElement.getTitle() + " " + luminosityStr);
                             imageElement.show();
                         } else if (luminosity != -1) {
                             System.out.println("Valore non valido.");
                         }
                     }
+                
+
                 } else if(element instanceof Video){
                     MediaElement videoElement = (Video) element;
                     int volume = -1;
