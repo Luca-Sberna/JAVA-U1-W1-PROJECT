@@ -5,7 +5,7 @@ private int duration;
 protected int luminosity;
 protected int volume;
     public Video(String title, int duration,int luminosity,int volume) {
-        super(title);
+        setTitle(title);
         this.luminosity = luminosity;
         this.duration = duration;
         this.volume = volume;
@@ -13,7 +13,7 @@ protected int volume;
     
     public void play() {
         for (int i = 0; i < duration; i++) {
-        	System.out.print(this.title);
+        	System.out.print(getTitle());
             for (int j = 0; j < volume; j++) {
                 System.out.print("!");
             }

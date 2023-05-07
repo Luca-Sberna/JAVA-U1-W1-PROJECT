@@ -1,11 +1,11 @@
 package player;
 
 public abstract class MediaElement {
-    protected static String title;
+    private static String title;
     
   
     
-    public MediaElement(String title) {
+    public void setTitle(String title) {
         this.title = title;
     }
     

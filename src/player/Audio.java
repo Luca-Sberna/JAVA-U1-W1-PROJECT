@@ -4,8 +4,8 @@ public class Audio extends MediaElement implements Playable {
 	int duration;
     protected int volume;
 
-	public Audio(String titleAudio, int duration) {
-		super(title);
+	public Audio(String title, int duration) {
+		setTitle(title);
         this.duration = duration;
 	}
 	@Override
@@ -13,7 +13,7 @@ public class Audio extends MediaElement implements Playable {
 		 for (int i = 0; i < duration; i++) {
 			 String puntoEsclamativo = "!".repeat(volume);
 			 
-			 System.out.println(title + " " + puntoEsclamativo);
+			 System.out.println(getTitle() + " " + puntoEsclamativo);
 //	            for (int j = 0; j < volume; j++) {
 //	            	if(j != volume -1) {
 //	            		System.out.print("!");	            		

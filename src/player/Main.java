@@ -48,10 +48,11 @@ public class Main {
         while (choice != 0) {
             System.out.println("Seleziona un elemento da riprodurre (1-" + elements.length + ", 0 per uscire):");
             choice = scanner.nextInt();
-            scanner.nextLine();
+           
             
             if (choice >= 1 && choice <= elements.length) {
-                MediaElement element = elements[choice - 1];
+                MediaElement element = elements[choice];
+                System.out.println("Elemento selezionato: " + element.getTitle());
                 if (element instanceof Audio) {
                     MediaElement playableElement = (Audio) element;
                     System.out.println("Regola il volume (valori da 0 a 10, -1 per uscire):");

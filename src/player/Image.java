@@ -4,14 +4,14 @@ public class Image extends MediaElement {
 	protected int luminosity;
 
 	public Image(String title) {
-		 super(title);
+		 setTitle(title);
 	        this.luminosity = luminosity;
 
 	}
 	
 	
 	public void show() {
-		System.out.println(this.title);
+		System.out.println(getTitle());
         for (int j = 0; j < luminosity; j++) {
             System.out.print("*");
         }
