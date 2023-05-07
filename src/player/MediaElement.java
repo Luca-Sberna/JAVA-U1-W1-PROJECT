@@ -2,7 +2,7 @@ package player;
 
 public abstract class MediaElement {
     protected static String title;
-    protected int luminosity;
+    
   
     
     public MediaElement(String title) {

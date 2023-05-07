@@ -9,27 +9,32 @@ public class Audio extends MediaElement implements Playable {
         this.duration = duration;
 	}
 	@Override
-	 public void play() {
-		System.out.println(title);
-        for (int i = 0; i < getDuration(); i++) {
-            System.out.println(getTitle()  + "!".repeat(volume));
-        }
-    }
+	public void play() {
+		 for (int i = 0; i < duration; i++) {
+			 String puntoEsclamativo = "!".repeat(volume);
+			 
+			 System.out.println(title + " " + puntoEsclamativo);
+//	            for (int j = 0; j < volume; j++) {
+//	            	if(j != volume -1) {
+//	            		System.out.print("!");	            		
+//	            	}else {
+//	            		System.out.println("!");
+//	            	}
+	            }
+	        }
 		
 	
-	private int getVolume() {
-		// TODO Auto-generated method stub
-		return volume;
-	}
 	@Override
 	public int getDuration() {
 		// TODO Auto-generated method stub
 		return 0;
 	}
 
-	public void alzaVolume() {
-		
-            volume++;
+	public void alzaVolume(int av) {
+		 for (int i = 0; i < av; i++) {             
+             volume++;
+         }
+           
         
     }
     
@@ -42,7 +47,12 @@ public class Audio extends MediaElement implements Playable {
 		// TODO Auto-generated method stub
 		
 	}
-	public void setDuration(int duration) {
+	public void setDuration(int duration2) {
+		// TODO Auto-generated method stub
+		
+	}
+	@Override
+	public void alzaVolume() {
 		// TODO Auto-generated method stub
 		
 	}

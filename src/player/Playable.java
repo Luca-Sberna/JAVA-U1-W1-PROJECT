@@ -6,4 +6,5 @@ int getDuration();
 void alzaVolume();
 void abbassaVolume();
 void setVolume(int volume);
+void alzaVolume(int av);
 }

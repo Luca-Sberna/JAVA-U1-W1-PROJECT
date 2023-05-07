@@ -28,7 +28,9 @@ public class Main {
                     System.out.println("Inserisci la durata del video:");
                     duration = scanner.nextInt();
                     scanner.nextLine();
-                    elements[i] = new Video(title, duration);
+				int luminosity = 0;
+				int volume = 0;
+				elements[i] = new Video(title, duration,luminosity,volume);
                     break;
                 case 3:
                     elements[i] = new Image(title);
@@ -39,6 +41,8 @@ public class Main {
                     break;
             }
         }
+        scanner.nextLine();
+
         
         int choice = -1;
         while (choice != 0) {
@@ -48,20 +52,18 @@ public class Main {
             
             if (choice >= 1 && choice <= elements.length) {
                 MediaElement element = elements[choice - 1];
-                if (element instanceof Playable) {
-                    Playable playableElement = (Playable) element;
+                if (element instanceof Audio) {
+                    MediaElement playableElement = (Audio) element;
                     System.out.println("Regola il volume (valori da 0 a 10, -1 per uscire):");
                     int volume = -1;
                     while (volume < 0 || volume > 10) {
                         volume = scanner.nextInt();
                         scanner.nextLine();
                         if (volume >= 0 && volume <= 10) {
-                            playableElement.alzaVolume();
-                            for (int i = 0; i < volume; i++) {
-                                System.out.print("!");
-                            }
+                            ((Audio) playableElement).alzaVolume(volume);
+                           
                             System.out.println();
-                            playableElement.play();
+                            ((Audio) playableElement).play();
                         } else if (volume != -1) {
                             System.out.println("Valore non valido.");
                         }
@@ -84,8 +86,27 @@ public class Main {
                             System.out.println("Valore non valido.");
                         }
                     }
-                } else {
-                    System.out.println("Elemento non riproducibile.");
+                } else if(element instanceof Video){
+                    MediaElement videoElement = (Video) element;
+                    int volume = -1;
+                    int luminosity = -1;
+                    while (luminosity < 0 || luminosity > 10 && volume < 0 || volume > 10) {
+                        System.out.println("Regola il volume (valori da 0 a 10, -1 per uscire):");
+                        volume = scanner.nextInt();
+                        scanner.nextLine();
+                        System.out.println("Regola la luminosità (valori da 0 a 10, -1 per uscire):");
+                        luminosity = scanner.nextInt();
+                        scanner.nextLine();
+                        if (luminosity >= 0 && luminosity <= 10 && volume >= 0 && volume <= 10) {
+                            ((Video) videoElement).aumentaLuminosita(luminosity);
+                            ((Video) videoElement).alzaVolume(volume);
+                            ((Video) videoElement).play();
+                            System.out.println();
+                           
+                        } else if (luminosity != -1 && volume != -1) {
+                            System.out.println("Valore non valido.");
+                        }
+                    }
                 }
             } else if (choice != 0) {
                 System.out.println("Scelta non valida.");
