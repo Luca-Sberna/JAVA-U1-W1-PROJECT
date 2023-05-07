@@ -46,13 +46,13 @@ public class Main {
         
         int choice = -1;
         while (choice != 0) {
-            System.out.println("Seleziona un elemento da riprodurre (1-" + elements.length + ", 0 per uscire):");
+            System.out.println("Seleziona un elemento da riprodurre (1 -" + elements.length + ", 0 per uscire):");
             choice = scanner.nextInt();
            
-            
             if (choice >= 1 && choice <= elements.length) {
                 MediaElement element = elements[choice - 1];
-                System.out.println("Elemento selezionato: " + element.getTitle());
+                System.out.println("Elemento selezionato: " + choice);
+                
                 
                 if (element instanceof Audio) {
                     MediaElement playableElement = (Audio) element;
