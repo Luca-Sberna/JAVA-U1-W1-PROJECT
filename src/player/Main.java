@@ -1,3 +1,14 @@
+/*
+ * la mia app parte chiedendo all'utente di creare 5 elementi 
+ * facendo impostare da subito la durata se è un video o un audio
+ * successivamente chiedo di selezionare un elemento a sua scelta 
+ * e quindi se è un audio fa settare solo il volume 
+ * per il video chiedo di settare sia il volume che la luminosità
+ * infine per l'immagine chiedo di settare soltanto la luminosità
+ * prima di riprodurre o mostrare.
+ * */
+
+
 
 package player;
 
